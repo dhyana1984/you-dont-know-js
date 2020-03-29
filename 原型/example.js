@@ -27,3 +27,12 @@ Bar.prototype = new Foo()
 Bar.prototype = Object.create(Foo.prototype)
 //ES6之后
 Object.setPrototypeOf(Bar.prototype, Foo.prototype)
+
+function Foo() {
+    //...
+}
+
+Foo.prototype.constructor === Foo //true
+
+var a = new Foo()
+a.constructor === Foo // true
