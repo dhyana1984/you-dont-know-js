@@ -34,3 +34,15 @@ if (p.indexOf('ol') === -1) {
 if (!~p.indexOf('ol')) {
     //...
 }
+
+//短路
+const foo = (a) => {
+    a && console.log(a)// && 表示如果a为真，则返回&&后面一项，所以此时a是在为后面的console.log(a)把关，当a为false时a负责短路
+}
+
+//通过设置valueOf实现a==2 && a ==3
+const i = 2
+Number.prototype.valueOf = () => {
+    return i++
+}
+!!(a == 2 && a == 3)//true
